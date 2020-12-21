@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from '../actions'
+import { INCREMENT, DECREMENT, RESET ,INCREMENT_BY} from '../actions'
 
 const INITIAL_STATE =
 {
@@ -27,6 +27,8 @@ export default function counter(state = INITIAL_STATE, action)
             return handleChange(state, -1);
         case RESET:
             return handleChange(state, -count);
+        case INCREMENT_BY:
+            return handleChange(state,action.payload.content)
         default:
             return state;
     }
